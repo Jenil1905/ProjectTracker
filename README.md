@@ -206,5 +206,3 @@ This project focuses on:
 * clean and maintainable code
 
 ---
-
-# 🙌 Thank You
