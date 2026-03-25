@@ -2,11 +2,11 @@
 
 ## 🔗 Live Demo
 
-👉 https://your-vercel-link.vercel.app
+👉 https://project-tracker-two-inky.vercel.app/
 
 ## 📂 GitHub Repository
 
-👉 https://github.com/your-username/project-tracker
+👉 https://github.com/Jenil1905/ProjectTracker
 
 ---
 
