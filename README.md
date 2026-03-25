@@ -156,11 +156,7 @@ Separation ensures:
 
 # 📊 Lighthouse Score
 
-(Attach screenshot here)
-
-* Performance: XX
-* Accessibility: XX
-* Best Practices: XX
+![Lighthouse Score](./src/assets/Screenshot%20from%202026-03-25%2015-41-22.png)
 
 ---
 
