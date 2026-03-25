@@ -1,73 +1,210 @@
-# React + TypeScript + Vite
+# 🚀 Project Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🔗 Live Demo
 
-Currently, two official plugins are available:
+👉 https://your-vercel-link.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📂 GitHub Repository
 
-## React Compiler
+👉 https://github.com/your-username/project-tracker
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+# 📌 Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This is a **Project Tracker application** built using **React + TypeScript** that supports:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* Kanban Board (drag & drop)
+* List View with Virtual Scrolling (500+ tasks)
+* Timeline (Gantt-style view)
+* Filtering with URL sync
+* Simulated real-time collaboration
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+The focus of this project is **performance, scalability, and clean architecture**.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+# 🛠️ Tech Stack
+
+* React (Vite)
+* TypeScript
+* Zustand (state management)
+* Tailwind CSS
+* Vercel (deployment)
+
+---
+
+# 🧠 Key Design Decisions
+
+## 1. State Management (Zustand)
+
+Zustand is used instead of Context API to:
+
+* avoid prop drilling
+* keep global state simple and scalable
+* improve performance with selective subscriptions
+
+---
+
+## 2. Custom Drag & Drop (No external libraries)
+
+Implemented using:
+
+* pointer events
+* manual position tracking
+* geometry-based drop detection
+
+This provides:
+
+* full control
+* better understanding of event systems
+* no dependency overhead
+
+---
+
+## 3. Virtual Scrolling (Performance Optimization)
+
+Instead of rendering all tasks:
+
+* Only visible rows (~20) are rendered
+* Remaining space is simulated using container height
+* Rows are dynamically updated based on scroll position
+
+### Result:
+
+* Smooth scrolling with 500+ tasks
+* Minimal DOM nodes
+* Better Lighthouse performance
+
+---
+
+## 4. Component Structure
+
+```
+components/
+  Kanban/
+  List/
+  Timeline/
+store/
+types/
+utils/
+pages/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Separation ensures:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* reusability
+* maintainability
+* clear responsibilities
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+# ⚙️ Features Implemented
+
+## 🟦 Kanban Board
+
+* Drag & drop tasks between columns
+* Column highlighting on hover
+* Placeholder while dragging
+* Column-wise task count
+* Empty state handling
+
+---
+
+## 📋 List View
+
+* Virtual scrolling (handles 500+ tasks)
+* Sorting (Title, Priority, Due Date)
+* Inline status editing
+* Filters (status + priority)
+* URL sync for filters
+* Empty state with reset
+
+---
+
+## 📅 Timeline View
+
+* Gantt-style visualization
+* Task duration mapping
+* Current day indicator
+* Priority-based color coding
+
+---
+
+## 🔍 Filtering System
+
+* Multi-select filters
+* URL synchronization
+* State persistence on refresh
+
+---
+
+## 🤝 Collaboration Simulation
+
+* Random task updates (simulated users)
+* User assignment to tasks
+
+---
+
+# ⚡ Performance
+
+* Virtual scrolling reduces DOM nodes drastically
+* Smooth rendering with large datasets
+* Optimized re-renders using Zustand
+
+---
+
+# 📊 Lighthouse Score
+
+(Attach screenshot here)
+
+* Performance: XX
+* Accessibility: XX
+* Best Practices: XX
+
+---
+
+# 🚀 Setup Instructions
+
+```bash
+git clone https://github.com/your-username/project-tracker
+cd project-tracker
+npm install
+npm run dev
 ```
+
+---
+
+# 🌐 Deployment
+
+Deployed using **Vercel**
+
+---
+
+# 🧪 Assumptions
+
+* Tasks are generated locally (no backend)
+* Collaboration is simulated (not real-time)
+* Fixed row height used for virtual scrolling
+
+---
+
+# ⚠️ Limitations
+
+* No backend persistence
+* Basic drag behavior (no reordering inside column)
+* Timeline view simplified for clarity
+
+---
+
+# 📌 Conclusion
+
+This project focuses on:
+
+* scalable frontend architecture
+* performance optimization
+* clean and maintainable code
+
+---
+
+# 🙌 Thank You
